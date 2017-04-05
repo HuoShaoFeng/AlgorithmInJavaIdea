@@ -8,7 +8,7 @@ import java.util.Scanner;
  * Created by Needle on 2017/4/5.
  * 求N个数中的第K大的数
  */
-public class KMaxNum {
+public class KMaxNumBubble {
 
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
