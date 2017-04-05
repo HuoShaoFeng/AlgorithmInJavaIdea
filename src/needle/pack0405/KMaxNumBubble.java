@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 /**
  * Created by Needle on 2017/4/5.
- * 求N个数中的第K大的数
+ * 求N个数中的第K大的数（冒泡法）
  */
 public class KMaxNumBubble {
 
