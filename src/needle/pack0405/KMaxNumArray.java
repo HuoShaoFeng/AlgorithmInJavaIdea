@@ -1,7 +1,6 @@
 package needle.pack0405;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Scanner;
 
 /**
