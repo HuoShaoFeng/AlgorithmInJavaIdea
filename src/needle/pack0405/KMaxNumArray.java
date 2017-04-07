@@ -26,19 +26,25 @@ public class KMaxNumArray {
             retArr[i]=arr[i];
         }
 
-        Arrays.sort(retArr);//升序排序
+        Arrays.sort(retArr);
 
-
-        for (int i = kmax;i<count;++i){
+        int insert = -1;//被插入的位置
+        for (int i = kmax;i<arr.length;++i) {
+            int itmp = Arrays.binarySearch(retArr, arr[i]);
             //Arrays.binarySearch(数组名，值)
             //这个方法的优点在于，如果找到了指定的元素，则返回其下标的位置，如果找不到，则返回 应该插入的位置的负数再 -1
             // （减1的目的是防止出现-0），我们可以据此推算出应该插入的位置。
-            int ij = Arrays.binarySearch(retArr,arr[i]);//二分查找，给予有序的
-            if(ij<0) {//retArr中没有这个值:-(ij+1)就是应该插入的位置
-                for (int j = 0; j < -(ij + 1) - 1; j++) {
-                    retArr[j] = retArr[j + 1];
+
+            //如果不存在，则返回index*(-1)-1 = itmp
+            insert = -(itmp + 1);
+            if (insert > 0) {
+                int iy = insert - 1;
+                int iz = 0;
+                while (iz < iy && iz + 1 < kmax) {
+                    retArr[iz] = retArr[iz + 1];
+                    iz++;
                 }
-                retArr[-(ij + 1) - 1] = arr[i];
+                retArr[iy] = arr[i];
             }
         }
 
